@@ -80,7 +80,11 @@ void WorkSpace::start()
             QTextStream in(&file);
             int index = 0;
             while(!_images.isEmpty()){
+
                 _pixmap->setMask(_mask);
+
+                repaint();
+
                 QImage image = _pixmap->toImage();
                 double sum = 0;
                 for(int w = 0; w < _pixmapWidth; ++w){
