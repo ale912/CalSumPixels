@@ -10,6 +10,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QApplication>
 #include <QDebug>
 
 class WorkSpace : public QWidget

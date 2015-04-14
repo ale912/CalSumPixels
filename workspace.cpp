@@ -76,14 +76,17 @@ void WorkSpace::start()
     }
     else{
         QFile file("c:/LOVRIO-197001010000.rio");
+        if(file.exists()) file.remove();
         if(file.open(QIODevice::Append)){
             QTextStream in(&file);
             int index = 0;
+            //double count = _circleW * _circleH;
             while(!_images.isEmpty()){
 
                 _pixmap->setMask(_mask);
 
                 repaint();
+                qApp->processEvents();
 
                 QImage image = _pixmap->toImage();
                 double sum = 0;
@@ -103,6 +106,7 @@ void WorkSpace::start()
                 ++index;
             }
         }
+        repaint();
         file.close();
     }
 }
