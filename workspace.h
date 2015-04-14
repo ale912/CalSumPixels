@@ -19,6 +19,7 @@ class WorkSpace : public QWidget
 private:
     QPixmap* _pixmap;
     QStringList _images;
+    int _step;
     int _pixmapWidth, _pixmapHeight;
     QPixmap* _maskPixmap;
     QBitmap _mask;
@@ -30,6 +31,8 @@ public:
     ~WorkSpace();
 
     void setPixmap(const QStringList &paths);
+    void setStep(int step) { _step = step; }
+    int getStep() const { return _step; }
 
 protected:
     void paintEvent(QPaintEvent* /*event*/);

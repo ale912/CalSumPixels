@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QScrollArea>
 #include <QFileDialog>
+#include <QInputDialog>
 #include "workspace.h"
 #include "setcircledialog.h"
 
@@ -27,6 +28,7 @@ private:
 private slots:
     void showSetCircleDialog();
     void openFile();
+    void showStep();
 };
 
 #endif // MAINWINDOW_H

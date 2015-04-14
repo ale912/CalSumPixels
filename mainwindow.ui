@@ -27,6 +27,7 @@
     <property name="title">
      <string>Инструменты</string>
     </property>
+    <addaction name="actionStep"/>
     <addaction name="actionSetCircle"/>
     <addaction name="actionCreateMask"/>
     <addaction name="actionStart"/>
@@ -67,6 +68,11 @@
   <action name="actionStart">
    <property name="text">
     <string>Поехали!</string>
+   </property>
+  </action>
+  <action name="actionStep">
+   <property name="text">
+    <string>Задать шаг...</string>
    </property>
   </action>
  </widget>

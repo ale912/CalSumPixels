@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionCreateMask, SIGNAL(triggered()), _workSpace, SLOT(createMask()));
     connect(ui->actionOpenFile, SIGNAL(triggered()), SLOT(openFile()));
     connect(ui->actionStart, SIGNAL(triggered()), _workSpace, SLOT(start()));
+    connect(ui->actionStep, SIGNAL(triggered()), SLOT(showStep()));
 }
 
 MainWindow::~MainWindow()
@@ -40,4 +41,9 @@ void MainWindow::openFile()
     QStringList files = QFileDialog::getOpenFileNames(0);
     files.sort();
     _workSpace->setPixmap(files);
+}
+
+void MainWindow::showStep()
+{
+    _workSpace->setStep(QInputDialog::getInt(0, tr("Задать шаг кадра"), tr("Шаг(в сек):"), _workSpace->getStep()));
 }

@@ -1,7 +1,7 @@
 #include "workspace.h"
 
 WorkSpace::WorkSpace(QWidget *parent) :
-    QWidget(parent), _maskPixmap(0), _isMaskCreate(false)
+    QWidget(parent), _maskPixmap(0), _isMaskCreate(false), _step(60)
 {
     _pixmap = new QPixmap;
 }
@@ -96,7 +96,7 @@ void WorkSpace::start()
                         sum += color.redF();
                     }
                 }
-                QString text(QString::number(index * 600));
+                QString text(QString::number(index * _step));
                 text.append(" ");
                 text.append(QString::number(sum));
                 text.append("\r\n");
